@@ -5,7 +5,12 @@ const config: Config.InitialOptions = {
   testEnvironment: 'jest-environment-jsdom',
   verbose: true,
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.+(ts|tsx|js)',
+    '**/?(*.)+(spec|test).+(ts|tsx|js)',
+    '!<rootDir>/src/main.tsx',
+    '!src/*.d.ts',
+  ],
   testMatch: ['**/<rootDir>/src/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
   moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
   moduleDirectories: ['node_modules', 'src'],
